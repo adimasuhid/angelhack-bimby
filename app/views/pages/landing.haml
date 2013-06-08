@@ -1,6 +1,6 @@
 #main-content
   #elev-pitch-1
-    %h4.text.right Show to the world what they're doing
+    %h4.text.right Let everyone knows what they're doing everyday.
     %br
     %center
       = link_to image_tag('facebook.png'), user_omniauth_authorize_path(:facebook)
@@ -11,7 +11,7 @@
 
   - if false
     - if user_signed_in?
-      %h1 Hello #{current_user.full_name}
+      %h: Hello #{current_user.full_name}
     - else
       %h1 Sign up now for your Bimby account
 
