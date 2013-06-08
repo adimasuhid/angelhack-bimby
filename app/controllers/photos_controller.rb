@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_filter :authenticate_user!
   def new
     @baby = Baby.find params[:baby_id]
     @photo = @baby.photos.new
