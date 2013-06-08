@@ -1,8 +1,30 @@
-- if user_signed_in?
-  %h1 Hello #{current_user.full_name}
-- else
-  %h1 Sign up now for your Bimby account
+#main-content
+  #elev-pitch-1
+    %h4.text.right Lorem Ipsum dolor sit amet persecut amer color labis..
+    %br
+    %center
+      = link_to "Sign Up", "#", class: 'button round'
+
+  - if false
+    #sign-in-container
+      %h4 Try out <span><img src="/assets/bimby-white-small.png"></img></span> today.
 
 
-= link_to "Login with fb", user_omniauth_authorize_path(:facebook) if !user_signed_in?
-= link_to "Sign Out", destroy_session_path(:user), method: :delete if user_signed_in?
+  - if false
+    - if user_signed_in?
+      %h1 Hello #{current_user.full_name}
+    - else
+      %h1 Sign up now for your Bimby account
+
+
+    = link_to "Login with fb", user_omniauth_authorize_path(:facebook) if !user_signed_in?
+    = link_to "Sign Out", destroy_session_path(:user), method: :delete if user_signed_in?
+
+:javascript
+
+  var windowHeight = $(window).height();
+  var main_content = $('#main-content');
+
+  $(document).ready(function(){
+    main_content.css('min-height', windowHeight - 104 );
+  });

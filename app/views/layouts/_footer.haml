@@ -1,20 +1,30 @@
 #semi-footer
   .row
-    .large-8.columns
-      %p
+    .large-12.columns
+      %center
         = link_to 'Terms of Service', '#', class: 'padded'
         = link_to 'Privacy Policy', '#', class: 'padded'
         = link_to 'How it Works', '#', class: 'padded'
         = link_to 'About', '#', class: 'padded'
         = link_to 'FAQs', '#', class: 'padded'
         = link_to 'Contact Us', '#', :'data-reveal-id' => 'contactModal', class: 'padded'
-    .large-4.columns
-      .right
+      -# Move this to about page
         %span.shaded Proudly crafted by
         %br
+          = link_to '@rbmrclo', 'http://twitter.com/rbmrclo'
+          = link_to '@olegdeleon', 'http://twitter.com/olegdeleon'
+          %br
           = link_to '@wetoolaguer', 'http://twitter.com/wetoolaguer'
           = link_to '@acedimasuhid', 'http://twitter.com/acedimasuhid'
-          = link_to '@rbmrclo', 'http://twitter.com/rbmrclo'
+ 
+#footer-copyright
+  .row
+    .large-6.columns
+      .right
+        = image_tag 'bimby-white.png'
+    .large-6.columns
+      .left
+        .bimby-text= "#{DateTime.now.strftime('%Y');}"
 
 #contactModal.reveal-modal.medium
   .centerify
