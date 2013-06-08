@@ -6,18 +6,29 @@
       %h1
         = link_to root_path do
           = image_tag 'bimby-small.png'
-  .top-bar-section
-    / Right Nav Section
-    %ul.right
-      %li
-        %p
-          = link_to "#" do
-            How It Works
-      %li
-        %p
-          = link_to "#" do
-            About
-      %li
-        %p
-          = link_to "#" do
-            Contact Us
+  - if controller.action_name.eql? 'landing' and controller.controller_name.eql? 'pages'
+    .top-bar-section
+      / Right Nav Section
+      %ul.right
+        %li
+          %p
+            = link_to "#" do
+              How It Works
+        %li
+          %p
+            = link_to "#" do
+              About
+        %li
+          %p
+            = link_to "#" do
+              Contact Us
+
+  - if user_signed_in?
+    .top-bar-section
+      / Right Nav Section
+      %ul.right
+        %li
+          %p
+            = link_to destroy_session_path(:user), method: :delete do
+              Sign Out
+    

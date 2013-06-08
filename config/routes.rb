@@ -17,11 +17,11 @@ AngelhackBimby::Application.routes.draw do
     end
   end
 
-  root :to => 'pages#landing'
 
   authenticated :user do
     root :to => 'babies#index'
   end
 
+  root :to => 'pages#landing'
 
 end

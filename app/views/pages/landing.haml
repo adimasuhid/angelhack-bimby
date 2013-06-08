@@ -1,14 +1,13 @@
 #main-content
   #elev-pitch-1
-    %h4.text.right Lorem Ipsum dolor sit amet persecut amer color labis..
+    %h4.text.right Show to the world what they're doing
     %br
     %center
-      = link_to "Sign Up", "#", class: 'button round'
-
+      = link_to image_tag('facebook.png'), user_omniauth_authorize_path(:facebook)
+  
   - if false
     #sign-in-container
       %h4 Try out <span><img src="/assets/bimby-white-small.png"></img></span> today.
-
 
   - if false
     - if user_signed_in?

@@ -1,4 +1,13 @@
-= simple_form_for @photo, url: baby_photos_path, method: :post do |y|
-  = y.label "Pick Photo"
-  = y.filepicker_field :full_url
-  = y.submit
+%center
+  %h3 Now upload a photo and show the world how cute your baby is!
+.container
+  .row.main.form-sheets.photos
+    = simple_form_for @photo, url: baby_photos_path, method: :post do |y|
+      %center
+        %i.general.foundicon-smiley
+        %br
+        = y.filepicker_field :full_url, class: 'twelve columns'
+
+      %br
+      %center
+        = y.submit, class: 'button round'

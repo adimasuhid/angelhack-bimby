@@ -1,9 +1,16 @@
-= simple_form_for @baby do |f|
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :age
-  = f.input :height
-  = f.input :weight
-  = f.select :gender, ["Male","Female"]
-  = f.button :submit
+%center
+  %h3 Hi there! Can you tell me who's your baby? 
+.container
+  .row.main.form-sheets
+    = simple_form_for @baby do |f|
+      = f.input :first_name, placeholder: 'Bimby', required: true
+      = f.input :last_name, placeholder: 'Bumblebee', required: true
+      = f.input :age, placeholder: '1 month', required: true
+      = f.input :height, placeholder: 'in cm.'
+      = f.input :weight, placeholder: 'in lbs.'
+      = f.select :gender, ["Male","Female"], required: true
+      .v-spacer40
+      %br
+      %center
+        = f.button :submit, "I'm Done"
 

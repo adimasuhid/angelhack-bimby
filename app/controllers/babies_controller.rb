@@ -6,11 +6,11 @@ class BabiesController < ApplicationController
     
     unless current_user.has_babies?
       redirect_to new_baby_path
+    else
+      @baby = current_user.babies.first
+      @profile_photo = @baby.photos.first
+      @photos = @baby.photos
     end
-
-    @baby = current_user.babies.first
-    @profile_photo = @baby.photos.first
-    @photos = @baby.photos
 
   end
 
