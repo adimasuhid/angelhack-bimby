@@ -76,7 +76,6 @@ pickle-email-*.html
 
 public/uploads
 *.un~
-Gemfile.lock
 .zeus.sock
 .rspec
 ..gitignore.un~

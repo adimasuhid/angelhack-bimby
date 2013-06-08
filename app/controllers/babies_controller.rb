@@ -1,4 +1,6 @@
 class BabiesController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
     #get baby
     
