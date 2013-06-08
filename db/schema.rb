@@ -11,7 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607143506) do
+ActiveRecord::Schema.define(:version => 20130608065244) do
+
+  create_table "babies", :force => true do |t|
+    t.string   "age"
+    t.string   "weight"
+    t.string   "height"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "milestone_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "milestones", :force => true do |t|
+    t.integer  "baby_id"
+    t.integer  "milestone_type_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.datetime "date"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "baby_id"
+    t.string   "full_url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
