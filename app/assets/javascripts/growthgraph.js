@@ -1,50 +1,5 @@
 "use strict";
 
-var tableData = JSON.stringify({
-                    "milestones": [
-                                        {
-                                            "name":"Palmar Grasp",
-                                            "month":"month_1"
-                                        },
-                                        {
-                                            "name":"Head Rotation",
-                                            "month":"month_4"
-                                        },
-                                        {
-                                            "name":"Rolls Over",
-                                            "month":"month_5"
-                                        },
-                                        {
-                                            "name":"Stands Alone",
-                                            "month":"month_12"
-                                        },
-                                        {
-                                            "name":"Walks Alone",
-                                            "month":"month_15"
-                                        }
-                                  ]
-                });
-
-var childData = JSON.stringify({
-                    "name": "Ace Dimasuhid",
-                    "birthday" : "April 26, 1987",
-                    "sex" : "Male",
-                    "milestones_met" : [ 
-                                            { 
-                                                "name":"Head Rotation", 
-                                                "month_achieved":"month_5"
-                                            },
-                                            {
-                                                "name":"Rolls Over",
-                                                "month_achieved":"month_3"
-                                            },
-                                            {
-                                                "name":"Stands Alone",
-                                                "month_achieved":"month_12"
-                                            }
-                    ]
-                });
-
 //column class
 function Column(monthNum) {
     var month = monthNum;
@@ -138,7 +93,7 @@ function Graph(gData, cData) {
     }
 
     function createColumns(gData, cData) {
-        var milestonesMet = cData['milestones_met'];
+        var milestonesMet = cData['milestones'];
         var columnsHash = {};
 
         //run through the months to create
@@ -165,7 +120,3 @@ function Graph(gData, cData) {
 
 }
 
-$(function() {
-    var graph = new Graph($.parseJSON(tableData), $.parseJSON(childData));
-    graph.logColumns();
-});

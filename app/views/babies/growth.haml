@@ -1,0 +1,23 @@
+#growth
+
+
+:javascript
+  $(function(){
+    var tableData;
+    var childData;
+
+    $.getJSON("/api/22/baby_milestones", function(data){
+      console.log(data);
+      parsedData = data;
+
+      console.log(parsedData);
+
+      tableData = parsedData;
+      childData = parsedData.baby;
+
+      var graph = new Graph(tableData, childData);
+      graph.logColumns();
+    });
+  });
+  
+
