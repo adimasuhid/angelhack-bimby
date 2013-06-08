@@ -14,9 +14,24 @@
   border-bottom: 5px solid rgba(9, 156, 224, 1);
 }
 
-#footer {
+#semi-footer {
   height: 100px;
   background: white;
+
+  a.padded {
+    padding: 0px 15px;
+
+    &:hover {
+      border-top: 4px solid rgba(9, 156, 224, 1);
+      padding-top: 10px;
+    }
+  }
+
+  .right {
+      span.shaded {
+      color: rgba(20, 20, 20, .6);
+    }
+  }
 }
 
 .row.main {

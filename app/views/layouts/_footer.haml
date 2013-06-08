@@ -1,1 +1,37 @@
-#footer
+#semi-footer
+  .row
+    .large-8.columns
+      %p
+        = link_to 'Terms of Service', '#', class: 'padded'
+        = link_to 'Privacy Policy', '#', class: 'padded'
+        = link_to 'How it Works', '#', class: 'padded'
+        = link_to 'About', '#', class: 'padded'
+        = link_to 'FAQs', '#', class: 'padded'
+        = link_to 'Contact Us', '#', :'data-reveal-id' => 'contactModal', class: 'padded'
+    .large-4.columns
+      .right
+        %span.shaded Proudly crafted by
+        %br
+          = link_to '@wetoolaguer', 'http://twitter.com/wetoolaguer'
+          = link_to '@acedimasuhid', 'http://twitter.com/acedimasuhid'
+          = link_to '@rbmrclo', 'http://twitter.com/rbmrclo'
+
+#contactModal.reveal-modal.medium
+  .centerify
+    = image_tag 'bimby-small.png'
+
+    %p We care for your babies, that's why we want to hear your concerns.
+
+    = form_tag '#' do
+      .row
+        .twelve.columns
+          = email_field_tag 'email', '', placeholder: 'Your E-mail'
+
+      .row
+        .twelve.columns
+          = text_area_tag 'concern', '', rows: 5, placeholder: 'Your Concern'
+
+      .row
+        = submit_tag 'Send',  class: 'button success eight columns offset-by-two'
+
+  %a.close-reveal-modal= "&#215;".html_safe

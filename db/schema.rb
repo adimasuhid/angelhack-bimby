@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608101346) do
+ActiveRecord::Schema.define(:version => 20130608180417) do
 
   create_table "babies", :force => true do |t|
     t.string   "age"
@@ -29,9 +29,11 @@ ActiveRecord::Schema.define(:version => 20130608101346) do
   create_table "milestone_types", :force => true do |t|
     t.string   "name"
     t.datetime "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "month"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "month"
+    t.text     "description"
+    t.integer  "month_num"
   end
 
   create_table "milestones", :force => true do |t|
@@ -82,6 +84,8 @@ ActiveRecord::Schema.define(:version => 20130608101346) do
     t.string   "fname"
     t.string   "lname"
     t.string   "gender"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
