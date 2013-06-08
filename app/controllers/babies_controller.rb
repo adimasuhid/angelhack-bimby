@@ -1,21 +1,25 @@
 class BabiesController < ApplicationController
   def index
     #get baby
-    @user = User.find params[:id]
-    @baby = @user.babies.first
+    
+    unless current_user.has_babies?
+      redirect_to new_baby_path
+    end
+
+    @baby = current_user.babies.first
     @photo = @baby.photos.first
 
   end
 
   def new
-    @baby = Baby.new
+    @baby = current_user.babies.new
   end
 
   def create
-    @baby = Baby.new params["baby"]
+    @baby = current_user.babies.new params[:baby]
 
     if @baby.save
-      redirect_to root_path
+      redirect_to new_baby_photo_path(@baby)
     end
   end
 end

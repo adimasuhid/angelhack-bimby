@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608085144) do
+ActiveRecord::Schema.define(:version => 20130608101346) do
 
   create_table "babies", :force => true do |t|
     t.string   "age"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20130608085144) do
     t.datetime "date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "month"
   end
 
   create_table "milestones", :force => true do |t|

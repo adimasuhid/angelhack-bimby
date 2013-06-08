@@ -42,6 +42,8 @@ gem 'foundation-icons-sass-rails'
 gem 'rails_admin'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'filepicker-rails'
+gem 'nested_form'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

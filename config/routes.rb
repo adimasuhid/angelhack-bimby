@@ -4,9 +4,11 @@ AngelhackBimby::Application.routes.draw do
   mount RailsAdmin::Engine => '/babyadmin', :as => 'rails_admin'
 
   resources :pages
+  resources :babies do
+    resources :photos
+  end
 
   root :to => 'pages#landing'
 
-  resources :babies
 
 end
