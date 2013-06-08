@@ -1,6 +1,8 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  require 'omniauth-facebook'
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
@@ -35,6 +37,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
+  if Rails.env.production?
+    config.omniauth :facebook, "149608885226488", "bfecf2d4234375714b161fb9123e78e4", {:scope => "email,user_about_me,user_birthday"}
+  else
+    config.omniauth :facebook, "149608885226488", "bfecf2d4234375714b161fb9123e78e4", {:scope => "email,user_about_me,user_birthday"}
+  end
+  
   config.case_insensitive_keys = [ :email ]
 
   # Configure which authentication keys should have whitespace stripped.

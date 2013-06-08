@@ -40,6 +40,8 @@ gem "haml", ">= 3.1.7"
 gem 'compass-rails'
 gem 'foundation-icons-sass-rails'
 gem 'rails_admin'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
