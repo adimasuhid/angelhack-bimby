@@ -1,6 +1,6 @@
 #main-content
   #elev-pitch-1
-    %h4.text.right Let everyone knows what they're doing everyday.
+    %h4.text.right Let everyone knows what they're doing.
     %br
     %center
       = link_to image_tag('facebook.png'), user_omniauth_authorize_path(:facebook)
@@ -19,6 +19,24 @@
     = link_to "Login with fb", user_omniauth_authorize_path(:facebook) if !user_signed_in?
     = link_to "Sign Out", destroy_session_path(:user), method: :delete if user_signed_in?
 
+#how-it-works
+  .centerify
+    .text You know what? It's so easy!
+    .v-spacer50
+    .sub-text Just like singing the A B C.
+
+  .row
+    %center
+      .large-4.columns
+        %i.general.foundicon-video
+        %h3 Upload a Photo / Video
+        %p Take an awesome picture of your child or even a 30 secs video showing the world what you're baby can do now.
+      .large-4.columns
+        %i.general.foundicon-smiley
+        %h3 Choose a Milestone
+        %p For every milestone that  
+      .large-4.columns
+        %i.general.foundicon-video
 :javascript
 
   var windowHeight = $(window).height();
