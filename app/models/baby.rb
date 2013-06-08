@@ -3,6 +3,7 @@ class Baby < ActiveRecord::Base
   
   belongs_to :user
   has_many :milestones
+  has_many :photos
   after_save :name
 
   def name

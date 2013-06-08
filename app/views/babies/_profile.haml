@@ -1,0 +1,29 @@
+.large-4.columns.pull-8#profile
+  .panel
+    %a{:href => "#"}
+      - if @photo.present?
+        = image_tag @photo
+      - else 
+        = image_tag "http://placehold.it/300x240&text=[img]"
+    %h5
+      %a{:href => "#"}
+      =link_to  @baby.name.present? ? @baby.name : "Baby Name", "#"
+    .section-container.vertical-nav{"data-options" => "deep_linking: false; one_up: true", "data-section" => ""}
+      %section.section
+        %h5.title
+          %a{:href => "#"} Badge 1
+      %section.section
+        %h5.title
+          %a{:href => "#"} Badge 2
+      %section.section
+        %h5.title
+          %a{:href => "#"} Badge 3
+      %section.section
+        %h5.title
+          %a{:href => "#"} Badge 4
+      %section.section
+        %h5.title
+          %a{:href => "#"} Badge 5
+      %section.section
+        %h5.title
+          %a{:href => "#"} Badge 6
