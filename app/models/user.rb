@@ -31,4 +31,8 @@ class User < ActiveRecord::Base
     user
   end
 
+  def full_name
+    "#{self.fname} #{self.lname}"
+  end
+
 end
