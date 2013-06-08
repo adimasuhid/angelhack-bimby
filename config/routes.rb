@@ -11,6 +11,12 @@ AngelhackBimby::Application.routes.draw do
     end
   end
 
+  resources :api, only: [:show] do
+    member do
+      get :baby_milestones
+    end
+  end
+
   root :to => 'pages#landing'
 
   authenticated :user do
