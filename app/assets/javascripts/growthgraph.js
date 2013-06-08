@@ -1,22 +1,37 @@
 "use strict";
 
-
 //column class
 function Column(monthNum) {
     var month = monthNum;
-    var advance;
-    var normal;
-    var delay;
+    var advance = [];
+    var normal= [];
+    var delay = [];
     
-    this.addData = function (cData) {
-
+    this.addData = function (cData, analysis) {
+        if (analysis == 0) {
+            normal.push(cData);
+        } else if (analysis > 0) {
+            advance.push(cData); 
+        } else {
+            delay.push(cData);
+        }
     }
 
+    this.getAdvance = function () {
+        return advance;
+    }
+
+    this.getNormal = function () {
+        return normal;
+    }
+
+    this.getDelay = function() {
+        return delay;
+    }
     this.getMonth = function(){
         return month;
     }
 }
-
 
 //growth analyzer class
 function GrowthAnalyzer(baseData) {
@@ -33,6 +48,7 @@ function GrowthAnalyzer(baseData) {
     this.analyze = function(cData) {
         var growthMilestoneAchieved = Number((cData.month_achieved).split('_')[1]);
         var result;
+
         if (growthMilestoneAchieved == baseHash[cData.name]) {
             result = 0;
         } else if (growthMilestoneAchieved < baseHash[cData.name]) {
@@ -49,32 +65,58 @@ function GrowthAnalyzer(baseData) {
 //graph class
 function Graph(gData, cData) {
     var growthAnalyzer = new GrowthAnalyzer(gData['milestones']);
-    createColumns(gData, cData);
+    var columns = createColumns(gData, cData);
 
     this.addGraph = function(numColumn, month) {
 
     }
 
-    function createColumns(gData, cData) {
-        var milestonesMet = cData['milestones'];
-        var columnsHash = {};
-        //run through the months to create
-        for (var i = 0; i < milestonesMet.length; i++) {
-            console.log(milestonesMet[i].name);
-            if (columnsHash.hasOwnProperty(milestonesMet[i].month_achieved)) {
-                
-            } else {
-                growthAnalyzer.analyze(milestonesMet[i]);
-                //var col = new Column(milestonesMet[i].month_achieved,milestonesMet[i]);
-                //columnsHash[milestonesMet[i].month_achieved];
+    this.logColumns = function (numColumn, month) {
+        for (var prop in columns) {
+            console.log("Header " + prop)
+            var col = columns[prop];
+
+            var normalArr = col.getNormal(); 
+            var advanceArr = col.getAdvance();
+            var delayArr = col.getDelay();
+
+            for (var i = 0; i < normalArr.length; i ++) {
+                console.log (normalArr[i].name +" "+ normalArr[i].month_achieved + " Dx:Normal");
+            }
+            for (var i = 0; i < advanceArr.length; i ++) {
+                console.log (advanceArr[i].name +" "+ advanceArr[i].month_achieved + " Dx:Advanced");
+            }
+            for (var i = 0; i < delayArr.length; i ++) {
+                console.log (delayArr[i].name +" "+ delayArr[i].month_achieved + " Dx:Delayed");
             }
         }
     }
 
-    function createTable(gData) {
+    function createColumns(gData, cData) {
+        var milestonesMet = cData['milestones'];
+        var columnsHash = {};
+
+        //run through the months to create
+        for (var i = 0; i < milestonesMet.length; i++) {
+            var milestone = milestonesMet[i];
+
+            if (columnsHash.hasOwnProperty(milestone.month_achieved)) {
+                columnsHash[milestone.month_achieved].addData(milestone, growthAnalyzer.analyze(milestone));
+            } else {
+                var col = new Column(milestone.month_achieved);
+                col.addData(milestone, growthAnalyzer.analyze(milestone));
+                columnsHash[milestone.month_achieved] = col;
+            }
+        }
+
+        return columnsHash;
+    }
+
+    function createGraph(gData) {
     }
 
     function populateTable(cData){
     }
+
 }
 
