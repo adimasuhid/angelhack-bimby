@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :access_token, :fname, :lname, :gender
   # attr_accessible :title, :body
-  #
-  #
+  
+  has_many :babies
   
   # for facebook authentication
   def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
@@ -35,4 +35,7 @@ class User < ActiveRecord::Base
     "#{self.fname} #{self.lname}"
   end
 
+  def has_babies?
+    self.babies.present?
+  end
 end
