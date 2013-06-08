@@ -1,8 +1,8 @@
 class BabiesController < ApplicationController
   def index
     #get baby
-    
-    @baby = Baby.first
+    @user = User.find params[:id]
+    @baby = @user.babies.first
     @photo = @baby.photos.first
 
   end
@@ -15,12 +15,7 @@ class BabiesController < ApplicationController
     @baby = Baby.new params["baby"]
 
     if @baby.save
-      #
-      #change this to home path
-      #
-      #
       redirect_to root_path
-
     end
   end
 end

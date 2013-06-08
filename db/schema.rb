@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130608085144) do
-=======
-ActiveRecord::Schema.define(:version => 20130608073644) do
->>>>>>> 8bef7e4a324d4ebff95abe827ae99731f5ef7b0b
 
   create_table "babies", :force => true do |t|
     t.string   "age"

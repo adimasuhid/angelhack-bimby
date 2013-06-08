@@ -16,6 +16,7 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
+  gem 'compass-rails'
   gem 'zurb-foundation', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -37,7 +38,6 @@ gem "simple_form"
 gem 'rest-client'
 gem 'alertify-rails'
 gem "haml", ">= 3.1.7"
-gem 'compass-rails'
 gem 'foundation-icons-sass-rails'
 gem 'rails_admin'
 gem 'omniauth'

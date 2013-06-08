@@ -1,3 +1,63 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media only screen and (max-width: 58.75em) {
+  .top-bar .top-bar-section {
+    display: none;
+  }
+}
+
+#header-with-logo {
+  height: 100px;
+  background: white;
+  border-bottom: 5px solid rgba(9, 156, 224, 1);
+}
+
+#footer {
+  height: 100px;
+  background: white;
+}
+
+.row.main {
+  background: transparent url(/assets/images/debut_light.png);
+  padding: 15px 25px;
+  .content {
+    min-height: 1000px;
+  }
+  /*background: #000 url(/assets/patterns/slash_it.png);*/
+
+  /*background: #121212 url(/assets/patterns/pw_maze_black.png);*/
+}
+
+.top-bar {
+  background: white !important; 
+  padding: 10px 0px;
+  position: relative;
+  margin-bottom: 0px;
+  height: 70px;
+
+  .top-bar-section li a:not(.button):hover {
+    background: white;
+    border-top: 4px solid rgba(9, 156, 224, 1);
+    padding-top: 10px;
+  }
+
+  .top-bar-section li a:not(.button) {
+    a { color: rgba(41, 41, 41, 1); }
+    background: white;
+  }
+
+  .top-bar-section ul li > a {
+    color: rgba(41, 41, 41, 1);
+  }
+
+  .toggle-topbar.menu-icon a {
+    color: rgba(41, 41, 41, 1);
+  }
+
+  .top-bar-section ul {
+    background: transparent;
+  }
+
+}
