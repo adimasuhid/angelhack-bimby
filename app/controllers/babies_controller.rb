@@ -12,12 +12,11 @@ class BabiesController < ApplicationController
   end
 
   def new
-    @baby = Baby.new
-    @photo = Photo.new
+    @baby = current_user.babies.new
   end
 
   def create
-    @baby = Baby.new params[:baby]
+    @baby = current_user.babies.new params[:baby]
 
     if @baby.save
       redirect_to new_baby_photo_path(@baby)

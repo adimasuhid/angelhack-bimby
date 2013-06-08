@@ -2,7 +2,7 @@
   .panel
     %a{:href => "#"}
       - if @photo.present?
-        = image_tag @photo
+        = image_tag @photo.full_url
       - else 
         = image_tag "http://placehold.it/300x240&text=[img]"
     %h5
