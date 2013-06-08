@@ -6,7 +6,7 @@ class Baby < ActiveRecord::Base
   has_many :photos
   after_save :name
 
-  def name
-    self.name = "#{self.first_name} #{self.last_name}"
+  def full_name
+    "#{self.first_name} #{self.last_name}"
   end
 end
