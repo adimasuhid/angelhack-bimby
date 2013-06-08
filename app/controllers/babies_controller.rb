@@ -9,18 +9,14 @@ class BabiesController < ApplicationController
 
   def new
     @baby = Baby.new
+    @photo = Photo.new
   end
 
   def create
-    @baby = Baby.new params["baby"]
+    @baby = Baby.new params[:baby]
 
     if @baby.save
-      #
-      #change this to home path
-      #
-      #
-      redirect_to root_path
-
+      redirect_to new_baby_photo_path(@baby)
     end
   end
 end

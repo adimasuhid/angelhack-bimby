@@ -1,0 +1,4 @@
+= simple_form_for @photo, url: baby_photos_path, method: :post do |y|
+  = y.label "Pick Photo"
+  = y.filepicker_field :full_url
+  = y.submit
