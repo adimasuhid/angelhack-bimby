@@ -1,6 +1,5 @@
 .row
   .large-8.columns.push-4
-    = render "feed"
-    = render "feed"
-    = render "feed"
+    - @photos.each do |photo|
+      = render "feed", photo: photo
   = render "profile"

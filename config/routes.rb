@@ -6,9 +6,16 @@ AngelhackBimby::Application.routes.draw do
   resources :pages
   resources :babies do
     resources :photos
+    member do
+      get :growth
+    end
   end
 
   root :to => 'pages#landing'
+
+  authenticated :user do
+    root :to => 'babies#index'
+  end
 
 
 end

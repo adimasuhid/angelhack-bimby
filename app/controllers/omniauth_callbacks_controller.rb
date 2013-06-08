@@ -6,11 +6,8 @@ class OmniauthCallbacksController < ApplicationController
         sign_in_and_redirect @user, :event => :authentication
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
-      if current_user.has_babies?
-        redirect_to root_path
-      else
-        redirect_to new_baby_path
-      end
+
+      redirect_to root_path
     end
   end
 

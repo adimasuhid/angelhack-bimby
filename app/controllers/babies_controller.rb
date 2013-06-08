@@ -9,7 +9,8 @@ class BabiesController < ApplicationController
     end
 
     @baby = current_user.babies.first
-    @photo = @baby.photos.first
+    @profile_photo = @baby.photos.first
+    @photos = @baby.photos
 
   end
 
@@ -24,4 +25,10 @@ class BabiesController < ApplicationController
       redirect_to new_baby_photo_path(@baby)
     end
   end
+
+  def growth
+    #change to chosen baby
+    @baby = current_user.babies.first
+  end
+
 end
