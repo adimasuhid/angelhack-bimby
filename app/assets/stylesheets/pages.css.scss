@@ -185,6 +185,10 @@
   height: 40px;
 }
 
+.v-spacer60 {
+  height: 60px;
+}
+
 }
 
 .panel {
@@ -200,6 +204,11 @@
   background: url(/assets/debut_light.png);
   height: 500px;
   color: rgba(29,29,29, .8);
+
+  img {
+    max-height: 200px !important;
+    border: 2px solid rgba(20,20,20, .6);
+  }
 
   i {
     font-size: 15em;
