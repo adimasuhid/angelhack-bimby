@@ -27,11 +27,8 @@
   .container
     .row.main
       = render 'layouts/header'
-  .content
-    = yield
-  .container
-    .row.main
-      = render 'layouts/footer'
+  = yield
+  = render 'layouts/footer'
 
   = javascript_include_tag "application"
   = filepicker_js_include_tag 
