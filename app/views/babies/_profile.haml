@@ -9,21 +9,11 @@
       %h5
         =link_to  @baby.name.present? ? @baby.name : "Baby Name", babies_path
     .section-container.vertical-nav{"data-options" => "deep_linking: false; one_up: true", "data-section" => ""}
-      %section.section
-        %h5.title
-          %a{:href => "#"} Badge 1 (Hello World!)
-      %section.section
-        %h5.title
-          %a{:href => "#"} Badge 2 (First Cry)
-      %section.section
-        %h5.title
-          %a{:href => "#"} Badge 3 (First Talk)
-      %section.section
-        %h5.title
-          %a{:href => "#"} Badge 4 (First Walk)
-      %section.section
-        %h5.title
-          %a{:href => "#"} Badge 5 (First Jump)
+      - if @baby.milestones
+        - @baby.milestones.each do |milestone|
+          - if milestone
+            - if milestone.milestone_type.name.include? 'Pincer'
+              = image_tag 'palmar_grasp.png', style: 'max-height: 60px;'
     = link_to "See #{@baby.first_name}'s Growth", growth_baby_path(@baby)
     %br
     %br
