@@ -15,6 +15,7 @@
   $(function(){
     var tableData;
     var childData;
+    var photos;
 
     $.getJSON("/api/22/baby_milestones", function(data){
       console.log(data);
@@ -24,8 +25,9 @@
 
       tableData = parsedData;
       childData = parsedData.baby;
+      photos = parsedData.baby.photos;
 
-      var graph = new Graph(tableData, childData);
+      var graph = new Graph(tableData, childData, photos);
       graph.logColumns();
     });
   });

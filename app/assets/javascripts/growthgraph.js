@@ -63,7 +63,7 @@ function GrowthAnalyzer(baseData) {
 
 
 //graph class
-function Graph(gData, cData) {
+function Graph(gData, cData, photos) {
     var growthAnalyzer = new GrowthAnalyzer(gData['milestones']);
     var columns = createColumns(gData, cData);
 
@@ -86,17 +86,24 @@ function Graph(gData, cData) {
 
             for (var i = 0; i < normalArr.length; i ++) {
                 console.log (normalArr[i].name +" "+ normalArr[i].month_achieved + " Dx:Normal");
-                $("."+prop+" .normal").append("<div>"+normalArr[i].name+"</div>");
+                html = createGraphView(normalArr[i].name,photos,description)
+                $("."+prop+" .normal").append(html);
             }
             for (var i = 0; i < advanceArr.length; i ++) {
                 console.log (advanceArr[i].name +" "+ advanceArr[i].month_achieved + " Dx:Advanced");
-                $("."+prop+" .advanced").append("<div>"+advanceArr[i].name+"</div>");
+                html = createGraphView(advanceArr[i].name,photos,description)
+                $("."+prop+" .advanced").append(html);
             }
             for (var i = 0; i < delayArr.length; i ++) {
                 console.log (delayArr[i].name +" "+ delayArr[i].month_achieved + " Dx:Delayed");
-                $("."+prop+" .delayed").append("<div>"+delayArr[i].name+"</div>");
+                html = createGraphView(delayArr[i].name,photos,description)
+                $("."+prop+" .delayed").append(html);
             }
         }
+    }
+
+    function createGraphView(name,photo,description){
+      return "<div>"+name+"</div>"
     }
 
     function createColumns(gData, cData) {

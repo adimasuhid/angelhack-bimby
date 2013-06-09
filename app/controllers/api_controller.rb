@@ -9,7 +9,7 @@ class ApiController < ApplicationController
     @milestone_types = MilestoneType.all
 
     render :json => {
-      :baby => @baby.as_json(:include => [:milestones]),
+      :baby => @baby.as_json(:include => [:milestones,:photos]),
       #:milestones_met => @milestones.as_json,
       :milestones => @milestone_types.as_json
     } 
