@@ -9,6 +9,6 @@ class MilestoneType < ActiveRecord::Base
   end
 
   def lorem
-    self.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec turpis." if self.description.blank?
+    self.description = "Congratulations!" if self.description.blank?
   end
 end
