@@ -75,7 +75,7 @@ function Graph(gData, cData, photos) {
     this.logColumns = function (numColumn, month) {
         console.log(columns);
         for (var prop in columns) {
-            var month_block = "<div class='month-block "+prop+"'><div class='month-row advanced'></div><div class='month-row regular'></div><div class='month-row delayed'></div><div class='month-name'>"+prop+"</div></div>";
+            var month_block = "<div class='month-block "+prop+"'><div class='month-row advanced'></div><div class='month-row regular'></div><div class='month-row delayed'></div><div class='month-name'>Month:"+prop.split("_")[1]+"</div></div>";
 
             $("#growth").prepend(month_block);
 
@@ -116,7 +116,7 @@ function Graph(gData, cData, photos) {
     }
 
     function createGraphView(id,name,photo,description){
-      var html = "<div class='hover-details-"+id+"'>"+name+"</div>";
+      var html = "<br><div class='hover-details-"+id+"'>"+name+"</div>";
       return html;
     }
 
