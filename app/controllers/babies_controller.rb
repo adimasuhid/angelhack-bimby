@@ -29,6 +29,8 @@ class BabiesController < ApplicationController
   def growth
     #change to chosen baby
     @baby = current_user.babies.first
+    @profile_photo = @baby.photos.first
+    @photos = @baby.photos
   end
 
 end
