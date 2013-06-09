@@ -1,6 +1,13 @@
 .row
   .large-8.columns.push-4
-    #growth
+    - if @baby.milestones.present?
+      #growth
+    - else
+      #no-milestone
+        Baby
+        = @baby.first_name
+        has no milestones yet. Why don't you add one above?
+        
 
   = render "babies/profile"
 
