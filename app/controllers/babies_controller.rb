@@ -10,6 +10,7 @@ class BabiesController < ApplicationController
       @baby = current_user.babies.first
       @profile_photo = @baby.photos.first
       @photos = @baby.photos
+      @babies = Baby.all
     end
 
   end

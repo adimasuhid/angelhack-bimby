@@ -40,7 +40,7 @@ Devise.setup do |config|
   if Rails.env.production?
     config.omniauth :facebook, "149608885226488", "bfecf2d4234375714b161fb9123e78e4", {:scope => "email,user_about_me,user_birthday"}
   else
-    config.omniauth :facebook, "149608885226488", "bfecf2d4234375714b161fb9123e78e4", {:scope => "email,user_about_me,user_birthday"}
+    config.omniauth :facebook, "539917942731897", "93f0505a76b672db743fa078eadd80ac", {:scope => "email,user_about_me,user_birthday"}
   end
   
   config.case_insensitive_keys = [ :email ]

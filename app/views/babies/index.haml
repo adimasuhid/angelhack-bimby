@@ -1,5 +1,200 @@
-.row
+.row.feeds
   .large-8.columns.push-4
-    - @photos.each do |photo|
-      = render "feed", photo: photo
+    - photo = @babies.first.photos.first
+    %center
+      #tiles= image_tag 'tiles2.png'
+    .row
+      %center
+        %h3 He loves the teddy bear!
+      .small-9.large-10.columns
+        %center
+          = image_tag photo.full_url
+      .small-9.large-10.columns
+        %p
+          %strong Carla Hampfrey said:
+          He liked what his father gave to him. What a sweet kid. He's so cute!
+        %ul.inline-list
+          %li
+            %a{:href => ""} Reply
+          %li
+            %a{:href => ""} Share
+        %h6 2 Comments
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p I loveee it! :)
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p Where did you buy that teddy bear?
+    %center
+      #tiles= image_tag 'tiles2.png'
+    .row
+      %center
+        %h3 First bath with her own!
+      .small-9.large-10.columns
+        %center
+          = image_tag 'cute-bath-girl.jpg'
+      .small-9.large-10.columns
+        %p
+          %strong Georgina Wheelson said:
+          What a lovely little girl! She can take a bath already with her own. She's so adorable!
+        %ul.inline-list
+          %li
+            %a{:href => ""} Reply
+          %li
+            %a{:href => ""} Share
+        %h6 2 Comments
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p I loveee it! :)
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p She's so cutee! Haha. Georgina, you must be a good mother.
+    %center
+      #tiles= image_tag 'tiles2.png'
+    .row
+      %center
+        %h3 First Pose in the camera!
+      .small-9.large-10.columns
+        %center
+          = image_tag 'cute-girl.jpg'
+      .small-9.large-10.columns
+        %p
+          %strong Anne Hathawhey said:
+          My baby is so cute! I'm so happy right now. She just did a pose like this when I take a shot of her. Very intelligent little girl.
+        %ul.inline-list
+          %li
+            %a{:href => ""} Reply
+          %li
+            %a{:href => ""} Share
+        %h6 2 Comments
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p You're baby is soooo cutee!
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p She's as beautiful as you! She has the same nose as yours! What a lovely girl.
+    %center
+      #tiles= image_tag 'tiles2.png'
+    .row
+      %center
+        %h3 First baking!
+      .small-9.large-10.columns
+        %center
+          = image_tag 'chef_baby.jpg'
+      .small-9.large-10.columns
+        %p
+          %strong Lander Samson said:
+          My son will become the most awesome chef! Haha
+        %ul.inline-list
+          %li
+            %a{:href => ""} Reply
+          %li
+            %a{:href => ""} Share
+        %h6 2 Comments
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p Awesome! He's so cute in that chef outfit!
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p He must be hungry now. It's your fault lander. haha
+    %center
+      #tiles= image_tag 'tiles2.png'
+    .row
+      %center
+        %h3 Eats like a Boss!
+      .small-9.large-10.columns
+        %center
+          = image_tag 'baby-fed.jpg'
+      .small-9.large-10.columns
+        %p
+          %strong Harold Weng said:
+          He's so adorable! Very behave while eating, what a cute kid.
+        %ul.inline-list
+          %li
+            %a{:href => ""} Reply
+          %li
+            %a{:href => ""} Share
+        %h6 2 Comments
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p Aye! I want that food, he says. haha
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p Your son looks so cute
+    %center
+      #tiles= image_tag 'tiles2.png'
+    .row
+      %center
+        %h3 Sleeping like an Angel!
+      .small-9.large-10.columns
+        %center
+          = image_tag 'cute-sleeping.jpg'
+      .small-9.large-10.columns
+        %p
+          %strong Martin Andragunov said:
+          Look how he sleeps! What a cute kid!
+        %ul.inline-list
+          %li
+            %a{:href => ""} Reply
+          %li
+            %a{:href => ""} Share
+        %h6 2 Comments
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p Hahaha. He must be dreaming of a milk island.
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p He sleeps the same way like you martin! Haha
+    %center
+      #tiles= image_tag 'tiles2.png'
+    .row
+      %center
+        %h3 Photography Fanboy!
+      .small-9.large-10.columns
+        %center
+          = image_tag 'baby-photog.jpg'
+      .small-9.large-10.columns
+        %p
+          %strong Vladimir Angelo said:
+          Photography all the way! What an intelligent kid.
+        %ul.inline-list
+          %li
+            %a{:href => ""} Reply
+          %li
+            %a{:href => ""} Share
+        %h6 2 Comments
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p Selfie mode! Haha
+        .row
+          .small-3.large-2.columns
+            %img{:src => "http://placehold.it/50x50&text=[img]"}/
+          .small-9.large-10.columns
+            %p He's so cute! What a bright kid.
   = render "profile"
