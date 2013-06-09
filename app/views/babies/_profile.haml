@@ -7,8 +7,7 @@
         - else 
           = image_tag "http://placehold.it/300x240&text=[img]"
       %h5
-        %a{:href => "#"}
-        =link_to  @baby.name.present? ? @baby.name : "Baby Name", "#"
+        =link_to  @baby.name.present? ? @baby.name : "Baby Name", babies_path
     .section-container.vertical-nav{"data-options" => "deep_linking: false; one_up: true", "data-section" => ""}
       %section.section
         %h5.title
@@ -25,3 +24,7 @@
       %section.section
         %h5.title
           %a{:href => "#"} Badge 5 (First Jump)
+    = link_to "See #{@baby.first_name}'s Growth", growth_baby_path(@baby)
+    %br
+    %br
+    = link_to "Consult a Pedia", "#"

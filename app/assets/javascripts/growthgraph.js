@@ -72,7 +72,11 @@ function Graph(gData, cData) {
     }
 
     this.logColumns = function (numColumn, month) {
+        console.log(columns);
         for (var prop in columns) {
+            var month_block = "<div class='month-block "+prop+"'><div class='month-row advanced'></div><div class='month-row regular'></div><div class='month-row delayed'></div><div class='month-name'>"+prop+"</div></div>";
+            $("#growth").prepend(month_block);
+
             console.log("Header " + prop)
             var col = columns[prop];
 
@@ -82,12 +86,15 @@ function Graph(gData, cData) {
 
             for (var i = 0; i < normalArr.length; i ++) {
                 console.log (normalArr[i].name +" "+ normalArr[i].month_achieved + " Dx:Normal");
+                $("."+prop+" .normal").append("<div>"+normalArr[i].name+"</div>");
             }
             for (var i = 0; i < advanceArr.length; i ++) {
                 console.log (advanceArr[i].name +" "+ advanceArr[i].month_achieved + " Dx:Advanced");
+                $("."+prop+" .advanced").append("<div>"+advanceArr[i].name+"</div>");
             }
             for (var i = 0; i < delayArr.length; i ++) {
                 console.log (delayArr[i].name +" "+ delayArr[i].month_achieved + " Dx:Delayed");
+                $("."+prop+" .delayed").append("<div>"+delayArr[i].name+"</div>");
             }
         }
     }
