@@ -126,7 +126,7 @@ to pronounce than 'ma-ma'."
   {
     name: "Stands with Support",
     month_num: 10,
-    description:"Assisting your baby often will help him develop motor skills for walking faster".
+    description:"Assisting your baby often will help him develop motor skills for walking faster."
   },
   {
     name: "Bye Bye",
