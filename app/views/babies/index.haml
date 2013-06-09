@@ -1,34 +1,35 @@
 .row.feeds
   .large-8.columns.push-4
     - photo = @babies.first.photos.first
-    %center
-      #tiles= image_tag 'tiles2.png'
-    .row
+    - if true
       %center
-        %h3 He loves the teddy bear!
-      .small-9.large-10.columns
+        #tiles= image_tag 'tiles2.png'
+      .row
         %center
-          = image_tag photo.full_url
-      .small-9.large-10.columns
-        %p
-          %strong Carla Hampfrey said:
-          He liked what his father gave to him. What a sweet kid. He's so cute!
-        %ul.inline-list
-          %li
-            %a{:href => ""} Reply
-          %li
-            %a{:href => ""} Share
-        %h6 2 Comments
-        .row
-          .small-3.large-2.columns
-            %img{:src => "http://placehold.it/50x50&text=[img]"}/
-          .small-9.large-10.columns
-            %p I loveee it! :)
-        .row
-          .small-3.large-2.columns
-            %img{:src => "http://placehold.it/50x50&text=[img]"}/
-          .small-9.large-10.columns
-            %p Where did you buy that teddy bear?
+          %h3 He loves the teddy bear!
+        .small-9.large-10.columns
+          %center
+            = image_tag photo.full_url
+        .small-9.large-10.columns
+          %p
+            %strong Carla Hampfrey said:
+            He liked what his father gave to him. What a sweet kid. He's so cute!
+          %ul.inline-list
+            %li
+              %a{:href => ""} Reply
+            %li
+              %a{:href => ""} Share
+          %h6 2 Comments
+          .row
+            .small-3.large-2.columns
+              %img{:src => "http://placehold.it/50x50&text=[img]"}/
+            .small-9.large-10.columns
+              %p I loveee it! :)
+          .row
+            .small-3.large-2.columns
+              %img{:src => "http://placehold.it/50x50&text=[img]"}/
+            .small-9.large-10.columns
+              %p Where did you buy that teddy bear?
     %center
       #tiles= image_tag 'tiles2.png'
     .row

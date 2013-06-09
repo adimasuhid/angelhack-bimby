@@ -10,7 +10,7 @@ class BabiesController < ApplicationController
       @baby = current_user.babies.first
       @profile_photo = @baby.photos.first
       @photos = @baby.photos
-      @babies = Baby.all
+      @babies = current_user.babies
     end
 
   end
