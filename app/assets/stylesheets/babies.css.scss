@@ -9,13 +9,11 @@
 #growth{
   width: 500px;
   height: 450px;
-  border: 2px solid black;
 }
 
 .month-block{
   width: 165px;
   height: 450px;
-  border: 1px solid red;
   /*display:inline-block;*/
   position:relative;
   float:left;
@@ -27,7 +25,6 @@
 
   .month-row{
     height:150px;
-    border: 1px solid blue;
   }
 
   .advanced{ background: green}

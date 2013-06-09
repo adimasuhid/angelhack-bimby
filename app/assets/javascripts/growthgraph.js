@@ -86,24 +86,25 @@ function Graph(gData, cData, photos) {
 
             for (var i = 0; i < normalArr.length; i ++) {
                 console.log (normalArr[i].name +" "+ normalArr[i].month_achieved + " Dx:Normal");
-                html = createGraphView(normalArr[i].name,photos,description)
-                $("."+prop+" .normal").append(html);
+                var normal= createGraphView(normalArr[i].name, photos ,normalArr[i].description)
+                $("."+prop+" .normal").append(normal);
             }
             for (var i = 0; i < advanceArr.length; i ++) {
                 console.log (advanceArr[i].name +" "+ advanceArr[i].month_achieved + " Dx:Advanced");
-                html = createGraphView(advanceArr[i].name,photos,description)
-                $("."+prop+" .advanced").append(html);
+                var advance = createGraphView(advanceArr[i].name, photos, advanceArr[i].description)
+                $("."+prop+" .advanced").append(advance);
             }
             for (var i = 0; i < delayArr.length; i ++) {
                 console.log (delayArr[i].name +" "+ delayArr[i].month_achieved + " Dx:Delayed");
-                html = createGraphView(delayArr[i].name,photos,description)
-                $("."+prop+" .delayed").append(html);
+                var delay = createGraphView(delayArr[i].name, photos, delayArr[i].description)
+                $("."+prop+" .delayed").append(delay);
             }
         }
     }
 
     function createGraphView(name,photo,description){
-      return "<div>"+name+"</div>"
+      var html = "<div class='hover-details'>"+name+"</div>";
+      return html;
     }
 
     function createColumns(gData, cData) {
