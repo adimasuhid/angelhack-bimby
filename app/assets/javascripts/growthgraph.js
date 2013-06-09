@@ -70,11 +70,13 @@ function Graph(gData, cData, photos) {
     this.addGraph = function(numColumn, month) {
 
     }
+    var count = 0;
 
     this.logColumns = function (numColumn, month) {
         console.log(columns);
         for (var prop in columns) {
             var month_block = "<div class='month-block "+prop+"'><div class='month-row advanced'></div><div class='month-row regular'></div><div class='month-row delayed'></div><div class='month-name'>"+prop+"</div></div>";
+
             $("#growth").prepend(month_block);
 
             console.log("Header " + prop)
@@ -84,26 +86,37 @@ function Graph(gData, cData, photos) {
             var advanceArr = col.getAdvance();
             var delayArr = col.getDelay();
 
+            console.log(advanceArr);
+
             for (var i = 0; i < normalArr.length; i ++) {
                 console.log (normalArr[i].name +" "+ normalArr[i].month_achieved + " Dx:Normal");
-                var normal= createGraphView(normalArr[i].name, photos ,normalArr[i].description)
+                var normal= createGraphView(normalArr[i].id,normalArr[i].name, photos ,normalArr[i].description)
                 $("."+prop+" .normal").append(normal);
+                $("."+prop+" .hover-details="+normalArr[i].id).hover(function(){
+                  console.log(normalArr[i].description);
+                });
             }
             for (var i = 0; i < advanceArr.length; i ++) {
                 console.log (advanceArr[i].name +" "+ advanceArr[i].month_achieved + " Dx:Advanced");
-                var advance = createGraphView(advanceArr[i].name, photos, advanceArr[i].description)
+                var advance = createGraphView(advanceArr[i].id,advanceArr[i].name, photos, advanceArr[i].description)
                 $("."+prop+" .advanced").append(advance);
+                $("."+prop+" .hover-details-"+advanceArr[i].id).hover(function(){
+                  console.log(advanceArr[i].description);
+                });
             }
             for (var i = 0; i < delayArr.length; i ++) {
                 console.log (delayArr[i].name +" "+ delayArr[i].month_achieved + " Dx:Delayed");
-                var delay = createGraphView(delayArr[i].name, photos, delayArr[i].description)
+                var delay = createGraphView(delayArr[i].id,delayArr[i].name, photos, delayArr[i].description)
                 $("."+prop+" .delayed").append(delay);
+                $("."+prop+" .hover-details-"+delayArr[i].id).hover(function(){
+                  console.log(delayArr[i].description);
+                });
             }
         }
     }
 
-    function createGraphView(name,photo,description){
-      var html = "<div class='hover-details'>"+name+"</div>";
+    function createGraphView(id,name,photo,description){
+      var html = "<div class='hover-details-"+id+"'>"+name+"</div>";
       return html;
     }
 
