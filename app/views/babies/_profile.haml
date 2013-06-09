@@ -1,12 +1,13 @@
 .large-4.columns.pull-8#profile
   .panel
-    %a{:href => "#"}
-      - if @profile_photo.present?
-        = image_tag @profile_photo.full_url
-      - else 
-        = image_tag "http://placehold.it/300x240&text=[img]"
-    %h5
-      =link_to  @baby.name.present? ? @baby.name : "Baby Name", babies_path
+    %center
+      %a{:href => "#"}
+        - if @profile_photo.present?
+          = image_tag @profile_photo.full_url
+        - else 
+          = image_tag "http://placehold.it/300x240&text=[img]"
+      %h5
+        =link_to  @baby.name.present? ? @baby.name : "Baby Name", babies_path
     .section-container.vertical-nav{"data-options" => "deep_linking: false; one_up: true", "data-section" => ""}
       %section.section
         %h5.title

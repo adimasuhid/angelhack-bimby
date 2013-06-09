@@ -12,7 +12,7 @@
       %ul.right
         %li
           %p
-            = link_to "#" do
+            = link_to "#how-it-works" do
               How It Works
         %li
           %p
@@ -20,7 +20,7 @@
               About
         %li
           %p
-            = link_to "#" do
+            = link_to "#", :'data-reveal-id' => 'contactModal', class: 'padded'do
               Contact Us
 
   - if user_signed_in?
@@ -34,7 +34,7 @@
               Add a Milestone
         %li
           %p
-            = link_to "#" do
+            = link_to milestones_path do
               Milestones Achieved
         %li
           %p

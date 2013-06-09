@@ -11,6 +11,8 @@ AngelhackBimby::Application.routes.draw do
     end
   end
 
+  resources :milestones
+
   resources :api, only: [:show] do
     member do
       get :baby_milestones
