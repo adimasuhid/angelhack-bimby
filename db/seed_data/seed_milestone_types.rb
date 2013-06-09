@@ -4,7 +4,7 @@ milestone_types =[
   {
     name: "Palmar Grasp",
     month_num: 1,
-    description:""
+    description: ""
   },
   {
     name: "Central Vision",
