@@ -1,7 +1,7 @@
 .row
   .large-8.columns.push-4
     - if @baby.milestones.present?
-      #growth
+      #growth{:'data-id' => @baby.id}
     - else
       #no-milestone
         Baby
@@ -17,7 +17,9 @@
     var childData;
     var photos;
 
-    $.getJSON("/api/22/baby_milestones", function(data){
+    var id = $("#growth").data("id");
+
+    $.getJSON("/api/"+id+"/baby_milestones", function(data){
       console.log(data);
       parsedData = data;
 
