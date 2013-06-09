@@ -1,16 +1,26 @@
 %center
-  %h3 Add a Milestone for your baby!
+  %h3 Add a new Milestone for your baby!
 .container
-  .row.main.form-sheets
-    = simple_form_for @baby do |f|
-      = f.input :first_name, placeholder: 'Bimby', required: true
-      = f.input :last_name, placeholder: 'Bumblebee', required: true
-      = f.input :age, placeholder: '1 month', required: true
-      = f.input :height, placeholder: 'in cm.'
-      = f.input :weight, placeholder: 'in lbs.'
-      = f.select :gender, ["Male","Female"], required: true
-      .v-spacer40
-      %br
-      %center
-        = f.button :submit, "I'm Done"
+  .row.main.form-sheets.photos
+    %center
+      = simple_form_for @photo, url: baby_photos_path do |f|
+        %i.general.foundicon-smiley
+        %br
+        = f.filepicker_field :full_url, class: 'twelve columns'
+    
+      = simple_form_for @milestone, url: baby_milestones_path  do |f|
+        = hidden_field_tag :full_url
+        = f.select :milestone_type_id, options_for_select(@milestone_types), required: true
+        .v-spacer40
+        %br
+        %center
+          = f.button :submit, "I'm Done"
+
+:javascript
+  $("input[type=submit]").click(function(e){
+    e.preventDefault();
+    full_url = $("#photo_full_url").val();
+    $("#full_url").val(full_url);
+    $("#new_milestone").submit();
+  });
 

@@ -1,9 +1,11 @@
 class Milestone < ActiveRecord::Base
-  attr_accessible :baby_id, :milestone_type_id, :date, :photo_id, :month_achieved, :name
+  attr_accessible :baby_id, :milestone_type_id, :date, :photo_id, :month_achieved, :name, :photo
 
   belongs_to :baby
   belongs_to :milestone_type
   belongs_to :photo
+
+  accepts_nested_attributes_for :photo
 
   before_save :get_month_achieved, :get_name
 

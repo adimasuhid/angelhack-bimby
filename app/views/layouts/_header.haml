@@ -29,13 +29,13 @@
       %ul.right
         %li
           %p
-            = link_to "#" do
+            = link_to new_baby_milestone_path(@baby) do
               %i.general.foundicon-plus.minified
               Add a Milestone
-        %li
-          %p
-            = link_to milestones_path do
-              Milestones Achieved
+        -#%li
+          -#%p
+            -#= link_to baby_milestones_path do
+              -#Milestones Achieved
         %li
           %p
             = link_to destroy_session_path(:user), method: :delete do

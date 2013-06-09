@@ -6,12 +6,12 @@ AngelhackBimby::Application.routes.draw do
   resources :pages
   resources :babies do
     resources :photos
+    resources :milestones
     member do
       get :growth
     end
   end
 
-  resources :milestones
 
   resources :api, only: [:show] do
     member do
