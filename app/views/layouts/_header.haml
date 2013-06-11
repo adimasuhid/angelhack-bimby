@@ -29,9 +29,11 @@
       %ul.right
         %li
           %p
-            = link_to new_baby_milestone_path(@baby) do
-              %i.general.foundicon-plus.minified
-              Add a Milestone
+            - begin
+              = link_to new_baby_milestone_path(@baby) do
+                %i.general.foundicon-plus.minified
+                Add a Milestone
+            - rescue
         
         -#%li
           -#%p

@@ -8,6 +8,8 @@
       = f.input :age, placeholder: '1 month', required: true
       = f.input :height, placeholder: 'in cm.'
       = f.input :weight, placeholder: 'in lbs.'
+      = f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:day, :month, :year]
+      %br
       = f.select :gender, ["Male","Female"], required: true
       .v-spacer40
       %br

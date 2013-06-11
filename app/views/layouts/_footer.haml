@@ -43,6 +43,9 @@
           = text_area_tag 'concern', '', rows: 5, placeholder: 'Your Concern'
 
       .row
-        = submit_tag 'Send',  class: 'button success eight columns offset-by-two'
+        = link_to request.path do
+          .button.success.eight.columns.offset-by-two
+            Send
+        -# = submit_tag 'Send',  class: 'button success eight columns offset-by-two'
 
   %a.close-reveal-modal= "&#215;".html_safe

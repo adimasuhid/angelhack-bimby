@@ -17,7 +17,7 @@ class MilestonesController < ApplicationController
     @baby = Baby.find params[:baby_id]
     @photo = @baby.photos.create!(full_url: params[:full_url])
 
-    @milestone = @baby.milestones.new(photo_id: @photo.id, date: DateTime.now, milestone_type_id:params[:milestone][:milestone_type_id])
+    @milestone = @baby.milestones.new(photo_id: @photo.id, date: DateTime.now, milestone_type_id: params[:milestone][:milestone_type_id])
     if @milestone.save
       redirect_to babies_path
     end

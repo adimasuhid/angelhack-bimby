@@ -3,15 +3,13 @@
     - @baby.milestones.reverse.each do |milestone|
       %center
         #tiles= image_tag 'tiles2.png'
-      .row
-        %center
-          %h3= milestone.name
-        .small-9.large-10.columns
-          %center
-            = image_tag milestone.photo.full_url
-        .small-9.large-10.columns
-          %p
-            %strong= milestone.milestone_type.description
+        %h3= milestone.name
+        = image_tag milestone.photo.full_url, style: 'min-width: 100%;'
+        %br
+        %br
+        %strong= milestone.milestone_type.description
+      - 4.times do
+        %br
 
     - if false
       - photo = @babies.first.photos.first
