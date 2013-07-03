@@ -1,6 +1,6 @@
 #main-content
   #elev-pitch-1
-    %h4.text.right Let everyone know what your babies are doing.
+    %h4.text.right Let everyone know what your babies are doing and take that memories forever with you.
     %br
     %center
       = link_to image_tag('facebook.png'), user_omniauth_authorize_path(:facebook)
@@ -39,7 +39,7 @@
         %h3 Choose a Milestone
         %p For every milestone that they achieve, they earn a badge that can let you track if they're growing well.
       .large-4.columns
-        = image_tag 'tattoo-baby.jpg'
+        = image_tag 'cute_baby_sleep.jpg'
         %h3 Share It!
         %p After choosing a milestone, you're now good to share the happiness within you. Congratulations!
 
@@ -49,5 +49,5 @@
   var main_content = $('#main-content');
 
   $(document).ready(function(){
-    main_content.css('min-height', windowHeight - 104 );
+    main_content.css('min-height', windowHeight + 100);
   });

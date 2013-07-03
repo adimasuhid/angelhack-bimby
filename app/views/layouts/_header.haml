@@ -6,7 +6,8 @@
       %h1
         = link_to root_path do
           = image_tag 'bimby-small.png'
-  - if controller.action_name.eql? 'landing' and controller.controller_name.eql? 'pages'
+
+  - if !user_signed_in?
     .top-bar-section
       / Right Nav Section
       %ul.right
@@ -16,7 +17,7 @@
               How It Works
         %li
           %p
-            = link_to "#" do
+            = link_to about_path do
               About
         %li
           %p

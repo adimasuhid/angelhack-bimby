@@ -1,0 +1,15 @@
+#about
+  #founders-holder.floated-left
+    = image_tag 'robbie.jpg'
+    = image_tag 'ace.jpg'
+    = image_tag 'weto.jpg'
+    = image_tag 'oleg.jpg'
+
+
+:javascript
+
+  var windowHeight = $(window).height();
+
+  $(document).ready(function(){
+    $('#about').css('min-height', windowHeight - 150);
+  });

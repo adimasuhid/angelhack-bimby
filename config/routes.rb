@@ -3,6 +3,8 @@ AngelhackBimby::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/babyadmin', :as => 'rails_admin'
 
+  match '/about', to: 'pages#about', as: :about
+
   resources :pages
   resources :babies do
     resources :photos
